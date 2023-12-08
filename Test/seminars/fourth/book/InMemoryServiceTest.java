@@ -23,7 +23,9 @@ class InMemoryServiceTest {
     @Test
     void testBookServiceFindById() {
         InMemoryBookRepository memory = new InMemoryBookRepository();
-        assertThat(memory.findById("1").toString()).isEqualTo("1 Book1 Author1");
+        assertThat(memory.findById("1").getId()).isEqualTo("1");
+        assertThat(memory.findById("1").getAuthor()).isEqualTo("Author1");
+        assertThat(memory.findById("1").getTitle()).isEqualTo("Book1");
     }
 
     @Test

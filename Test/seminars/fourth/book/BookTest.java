@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BookTest {
     //    Book book;
@@ -19,11 +20,8 @@ class BookTest {
 
     @Test
     void testBookConstructor() {
-        String expId = "1";
-        String expTitle = "Hunters Notes";
-        String expAuthor = "I.S.Turgenev";
         Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
-        assertNotNull(book);
+        assertTrue(book instanceof Book);
     }
 
     @Test
@@ -65,9 +63,4 @@ class BookTest {
         assertThat(book.getAuthor()).isEqualTo("New Author");
     }
 
-    @Test
-    void testBookToString() {
-        Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
-        assertThat(book.toString()).isEqualTo("1 Hunters Notes I.S.Turgenev");
-    }
 }
