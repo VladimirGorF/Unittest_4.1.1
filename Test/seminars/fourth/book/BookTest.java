@@ -11,54 +11,47 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BookTest {
-    //    Book book;
-    //
-    //    @BeforeEach
-    //    void createBook() {
-    //        Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
-    //    }
+        Book book;
+
+        @BeforeEach
+        void createBook() {
+            book = new Book("1", "Hunters Notes", "I.S.Turgenev");
+        }
 
     @Test
     void testBookConstructor() {
-        Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
         assertTrue(book instanceof Book);
     }
 
     @Test
     void testBookGetId() {
-        Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
         assertThat(book.getId()).isEqualTo("1");
     }
 
     @Test
     void testBookSetId() {
-        Book book = new Book("2", "Hunters Notes2", "I.S.Turgenev2");
         book.setId("3");
         assertThat(book.getId()).isEqualTo("3");
     }
 
     @Test
     void testBookGetTitle() {
-        Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
         assertThat(book.getTitle()).isEqualTo("Hunters Notes");
     }
 
     @Test
     void testBookSetTitle() {
-        Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
         book.setTitle("New Title");
         assertThat(book.getTitle()).isEqualTo("New Title");
     }
 
     @Test
     void testBookGetAuthor() {
-        Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
         assertThat(book.getAuthor()).isEqualTo("I.S.Turgenev");
     }
 
     @Test
     void testBookSetAuthor() {
-        Book book = new Book("1", "Hunters Notes", "I.S.Turgenev");
         book.setAuthor("New Author");
         assertThat(book.getAuthor()).isEqualTo("New Author");
     }

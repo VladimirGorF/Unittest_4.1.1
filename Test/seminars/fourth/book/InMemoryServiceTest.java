@@ -13,16 +13,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 class InMemoryServiceTest {
-//    InMemoryBookRepository memory;
+    InMemoryBookRepository memory;
 
-//    @BeforeEach
-//    void setUp() {
-//        InMemoryBookRepository memory = new InMemoryBookRepository();
-//    }
+    @BeforeEach
+    void setUp() {
+        memory = new InMemoryBookRepository();
+    }
 
     @Test
     void testBookServiceFindById() {
-        InMemoryBookRepository memory = new InMemoryBookRepository();
         assertThat(memory.findById("1").getId()).isEqualTo("1");
         assertThat(memory.findById("1").getAuthor()).isEqualTo("Author1");
         assertThat(memory.findById("1").getTitle()).isEqualTo("Book1");
@@ -30,18 +29,15 @@ class InMemoryServiceTest {
 
     @Test
     void testBookServiceFindAllListType() {
-        InMemoryBookRepository memory = new InMemoryBookRepository();
         assertThat(memory.findAll()).isInstanceOf(List.class);
     }
     @Test
     void testBookServiceFindSize() {
-        InMemoryBookRepository memory = new InMemoryBookRepository();
         assertThat(memory.findAll()).hasSize(2);
     }
 
     @Test
     void testBookServiceFindNotEmpty() {
-        InMemoryBookRepository memory = new InMemoryBookRepository();
         assertThat(memory.findAll()).isNotEmpty();
     }
 }
